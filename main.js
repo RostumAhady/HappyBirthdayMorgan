@@ -11,7 +11,7 @@ window.onload = function(){
     image3.src = 'images/IMissYou.jpg';
     image4.src = 'images/ImStuck.jpg';
 }
-
+ 
 let bg = document.getElementById("bg");
 bg.addEventListener("click", function(mouse){
     let x = mouse.clientX
