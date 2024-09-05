@@ -6,16 +6,14 @@ window.onload = function(){
     let image3 = new Image();
     let image4 = new Image();
     
-    image1.src = 'images/plane.gif';
-    image2.src = 'images/bing.gif';
-    image3.src = 'images/bingbong.gif';
-    image4.src = 'images/boo.gif';
-
+    image1.src = 'images/HappyBirthday.jpg';
+    image2.src = 'images/ILoveYou.jpg';
+    image3.src = 'images/IMissYou.jpg';
+    image4.src = 'images/ImStuck.jpg';
 }
 
 let bg = document.getElementById("bg");
-bg.addEventListener("click", addImage)
-function addImage(mouse) {
+bg.addEventListener("click", function(mouse){
     let x = mouse.clientX
     let y = mouse.clientY
     rand = Math.random();
@@ -25,12 +23,12 @@ function addImage(mouse) {
     img.style.left = x - 110 +"px",
     bg.appendChild(img),
     // randomly selecting which image and sound plays. Depending on number of images, will have to manually change probability.
-    // Math.random() > 0.50 ? (img.src = "/images/maria1.png", sound1.play()) : (img.src = "images/maria2.jpg", sound2.play())
-    rand >= 0.75 ? (img.src = "images/plane.gif", planeAudio.play())
-    : rand >=0.5 && rand < 0.75 ? (img.src = "images/bing.gif", bingAudio.play()) 
-    : rand >= 0.25 && rand < 0.5 ? (img.src = "images/bingbong.gif", bingBongAudio.play()) 
-    : (img.src = "images/boo.gif", booAudio.play())
-}
+    rand >= 0.80 ? (img.src = "images/ILoveYou.jpg", ILoveYou.play())
+    : rand >=0.60 && rand < 0.80 ? (img.src = "images/IMissYou.jpg", IMissYou.play()) 
+    : rand >= 0.40 && rand < 0.60 ? (img.src = "images/HappyBirthday.jpg", HappyBirthday.play()) 
+    : (img.src = "images/ImStuck.jpg", ImStuck.play())
+})
+
 
 window.addEventListener("load", function(){
     bg.style.opacity = '1';
@@ -39,8 +37,7 @@ window.addEventListener("load", function(){
 
 //howler.js audio retrieval
 
-
-const planeAudio = new Howl({ src: ["audio/plane.mp3"]});
-const bingAudio = new Howl({src: ["audio/bing.mp3"]});
-const bingBongAudio = new Howl({src: ["audio/bingbong.mp3"]});
-const booAudio = new Howl({src: ["audio/boo.mp3"]});
+const HappyBirthday = new Howl({ src: ["audio/HappyBirthday.mp3"]});
+const IMissYou = new Howl({src: ["audio/IMissYou.mp3"]});
+const ImStuck = new Howl({src: ["audio/ImStuck.mp3"]});
+const ILoveYou = new Howl({src: ["audio/ILoveYou.mp3"]});
